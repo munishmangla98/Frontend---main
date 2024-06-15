@@ -14,7 +14,7 @@ function Freebook() {
     useEffect(() => {
         const getBook = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/blogs");
+                const res = await axios.get("https://mernbackend-main.onrender.com/api/blogs");
 
                 const data = res.data.filter((data) => data.category === "Free");
                 console.log(data);

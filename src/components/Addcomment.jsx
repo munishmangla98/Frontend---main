@@ -20,7 +20,7 @@ function AddComment({ onCommentAdded }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:5000/api/blogcomment/blogs/${blogId}/comments`, {
+            const res = await axios.post(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blogId}/comments`, {
                 content: comment
             });
             if (res.status === 201) {

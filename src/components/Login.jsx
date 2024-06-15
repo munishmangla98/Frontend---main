@@ -15,7 +15,7 @@ function Login() {
                 email: data.email,
                 password: data.password,
             };
-            const response = await axios.post("http://localhost:5000/api/auth/login", userInfo);
+            const response = await axios.post("https://mernbackend-main.onrender.com/api/auth/login", userInfo);
             if (response.data && response.data.token) {
                 // Store the token in local storage
                 const userData = {

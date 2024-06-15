@@ -38,7 +38,7 @@ function WriteBlog() {
                 date: currentDate // Include current date in the request
             };
             console.log('Request Data:', requestData); // Log the complete request data
-            const response = await axios.post('http://localhost:5000/api/blogs', requestData);
+            const response = await axios.post('https://mernbackend-main.onrender.com/api/blogs', requestData);
             console.log('Blog created:', response.data);
             document.getElementById("my_modal_4").close();
             // You can add further actions here like closing the modal or clearing the form

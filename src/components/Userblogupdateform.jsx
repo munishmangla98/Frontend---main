@@ -30,7 +30,7 @@ function Userblogupdateform() {
                 date: currentDate,
             };
 
-            const response = await axios.put(`http://localhost:5000/api/blogs/${blogId}`, requestData);
+            const response = await axios.put(`https://mernbackend-main.onrender.com/api/blogs/${blogId}`, requestData);
             console.log('Blog updated:', response.data);
             // Show success toast
             toast.success('Blog updated successfully!');

@@ -29,7 +29,7 @@ export default function Signup() {
             password: data.password,
         }
         console.log(data)
-        await axios.post("http://localhost:5000/api/auth/signup", userInfo)
+        await axios.post("https://mernbackend-main.onrender.com/api/auth/signup", userInfo)
             .then((res) => {
                 console.log(res.data);
                 if (res.data) {

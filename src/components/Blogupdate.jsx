@@ -47,7 +47,7 @@ function Blogupdate() {
             console.log('Request Data:', requestData); // Log the complete request data
             const blogId = JSON.parse(localStorage.getItem('openedBlog'))._id;
             console.log('Headers:', axios.defaults.headers.common);
-            const response = await axios.put(`http://localhost:5000/api/blogs/${blogId}`, requestData);
+            const response = await axios.put(`https://mernbackend-main.onrender.com/api/blogs/${blogId}`, requestData);
             console.log('Blog updated:', response.data);
             // Close the modal on success
             document.getElementById('my_modal_42').close();

@@ -27,7 +27,7 @@ function Userblogs() {
                 console.log("User ID:", userId);
 
                 // Construct the API URL using the retrieved user_id
-                const url = `http://localhost:5000/api/users/${userId}/blogs`;
+                const url = `https://mernbackend-main.onrender.com/api/users/${userId}/blogs`;
 
                 // Make the API request
                 const res = await axios.get(url);
