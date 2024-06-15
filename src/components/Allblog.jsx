@@ -9,7 +9,7 @@ function Allblog() {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/blogs");
+                const res = await axios.get("https://mernbackend-main.onrender.com/api/blogs");
                 console.log(res.data); // Log all fetched data
                 console.log("Data:", res.data); // Log the data received
                 setBook(res.data); // Set all fetched data
