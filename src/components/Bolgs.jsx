@@ -24,7 +24,7 @@ function Bolgs() {
 
         const getBlogs = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/blogs");
+                const res = await axios.get("https://mernbackend-main.onrender.com/api/blogs");
                 // console.log(res.data); // Log all fetched data
                 setBook(res.data); // Set all fetched data
             } catch (error) {
