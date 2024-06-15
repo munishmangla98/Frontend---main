@@ -20,9 +20,9 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/allblogs" element={<Allblogs />} />
+        <Route path="https://storied-cannoli-f6d505.netlify.app/allblogs" element={<Allblogs />} />
         {/* <Route path="/Userprofile" element={<UserProfile />} /> */}
-        <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="https://storied-cannoli-f6d505.netlify.app/UserProfile" element={<UserProfile />} />
         <Route path="/Blogdetails/:id" element={<Blogdetails />} />
         <Route path="/Userblogupdate/:id"  element={authUser ? <Userblogupdate /> : <Navigate to="/signup" /> }/>
         <Route path="/Userblogupdateform" element={authUser ? <Userblogupdateform />: <Navigate to="/signup" />} />
