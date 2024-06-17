@@ -27,6 +27,10 @@ function Cards({ item }) {
                         >
                             Read Blog
                         </Link>
+                        <Link
+                            to={`/Userblogupdate/${item._id}`}
+                            className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-blue-500 hover:text-white duration-200"
+                            onClick={storeBlogDetails}>Update Blog</Link>
                         {/* <a  className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-blue-500 hover:text-white duration-200" href='/Blogdetails'>Read Blog</a> */}
                     </div>
                 </div>
