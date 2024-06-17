@@ -28,36 +28,36 @@ function Userblogupdate() {
 
 
 
-    // const handleDeleteComment = async (commentId) => {
-    //     try {
-    //         await axios.delete(`http://localhost:5000/api/blogs/${id}/comments/${commentId}`);
-    //         const updatedComments = comments.filter(comment => comment._id !== commentId);
-    //         setComments(updatedComments);
-    //     } catch (error) {
-    //         console.error('Error deleting comment:', error);
-    //     }
-    // };
-
     const handleDeleteComment = async (commentId) => {
         try {
-            if (!blog) {
-                console.error('Blog details are not available.');
-                return;
-            }
-
-            const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
-
-            if (response.status === 200) {
-                const updatedComments = comments.filter(comment => comment._id !== commentId);
-                setComments(updatedComments);
-                console.log('Comment deleted successfully.');
-            } else {
-                console.error('Failed to delete comment:', response.statusText);
-            }
+            await axios.delete(`https://mernbackend-main.onrender.com/api/blogs/${id}/comments/${commentId}`);
+            const updatedComments = comments.filter(comment => comment._id !== commentId);
+            setComments(updatedComments);
         } catch (error) {
             console.error('Error deleting comment:', error);
         }
     };
+
+    // const handleDeleteComment = async (commentId) => {
+    //     try {
+    //         if (!blog) {
+    //             console.error('Blog details are not available.');
+    //             return;
+    //         }
+
+    //         const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
+
+    //         if (response.status === 200) {
+    //             const updatedComments = comments.filter(comment => comment._id !== commentId);
+    //             setComments(updatedComments);
+    //             console.log('Comment deleted successfully.');
+    //         } else {
+    //             console.error('Failed to delete comment:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error deleting comment:', error);
+    //     }
+    // };
 
     const handleDeleteBlog = async () => {
         try {
