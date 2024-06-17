@@ -37,19 +37,19 @@ function Userblogupdate() {
     //         console.error('Error deleting comment:', error);
     //     }
     // };
-    const storedUser = localStorage.getItem('user');
+    // const storedUser = localStorage.getItem('user');
         
-    // Check if user data exists
-    if (storedUser) {
-        // Parse the user data to get the token
-        const user = JSON.parse(storedUser);
-        const token = user.token;
+    // // Check if user data exists
+    // if (storedUser) {
+    //     // Parse the user data to get the token
+    //     const user = JSON.parse(storedUser);
+    //     const token = user.token;
         
-        // Set token as default header for all axios requests
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    } else {
-        console.error('User data not found in local storage.');
-    }
+    //     // Set token as default header for all axios requests
+    //     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    // } else {
+    //     console.error('User data not found in local storage.');
+    // }
     const handleDeleteComment = async (commentId) => {
         try {
             if (!blog) {
@@ -116,7 +116,7 @@ function Userblogupdate() {
     // };
     
     
-
+// bolg delete
     const handleDeleteBlog = async () => {
         try {
             await axios.delete(`https://mernbackend-main.onrender.com/api/blogs/${id}`);
