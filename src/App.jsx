@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/Allblogs" element={<Allblogs />} />
         {/* <Route path="/Userprofile" element={<UserProfile />} /> */}
         <Route path="/UserProfile" element={ authUser ? <UserProfile /> : <Navigate to="/signup" /> } />
-        <Route path="/Blogdetails/:id" element={<Blogdetails />} />
+        <Route path="/Blogdetails/:id" element={authUser ? <Blogdetails />: <Navigate to="/signup" /> } />
         <Route path="/Userblogupdate/:id"  element={authUser ? <Userblogupdate /> : <Navigate to="/signup" /> }/>
         <Route path="/Userblogupdateform" element={authUser ? <Userblogupdateform />: <Navigate to="/signup" />} />
         <Route path="/signup" element={<Signup />} />
