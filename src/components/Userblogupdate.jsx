@@ -37,50 +37,72 @@ function Userblogupdate() {
     //         console.error('Error deleting comment:', error);
     //     }
     // };
-
+    const storedUser = localStorage.getItem('user');
+        
+    // Check if user data exists
+    if (storedUser) {
+        // Parse the user data to get the token
+        const user = JSON.parse(storedUser);
+        const token = user.token;
+        
+        // Set token as default header for all axios requests
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } else {
+        console.error('User data not found in local storage.');
+    }
     const handleDeleteComment = async (commentId) => {
         try {
-            if (!blog) {
-                console.error('Blog details are not available.');
-                return;
-            }
-    
-            // Retrieve user object from localStorage
-            const userString = localStorage.getItem('user');
-            if (!userString) {
-                console.error('No user information found in localStorage');
-                return;
-            }
-    
-            const user = JSON.parse(userString); // Parse the JSON string into an object
-            const token = user.token; // Extract the token from the user object
-    
-            if (!token) {
-                console.error('No token found');
-                return;
-            }
-    
-            // Make the DELETE request with the Authorization header
-            const response = await axios.delete(
-                `https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`,
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                }
-            );
-    
-            if (response.status === 200) {
-                const updatedComments = comments.filter(comment => comment._id !== commentId);
-                setComments(updatedComments);
-                console.log('Comment deleted successfully.');
-            } else {
-                console.error('Failed to delete comment:', response.statusText);
-            }
+            await axios.delete(`https://mernbackend-main.onrender.com/api/blogs/${id}/comments/${commentId}`);
+            const updatedComments = comments.filter(comment => comment._id !== commentId);
+            setComments(updatedComments);
         } catch (error) {
             console.error('Error deleting comment:', error);
         }
     };
+
+    // const handleDeleteComment = async (commentId) => {
+    //     try {
+    //         if (!blog) {
+    //             console.error('Blog details are not available.');
+    //             return;
+    //         }
+    
+    //         // Retrieve user object from localStorage
+    //         const userString = localStorage.getItem('user');
+    //         if (!userString) {
+    //             console.error('No user information found in localStorage');
+    //             return;
+    //         }
+    
+    //         const user = JSON.parse(userString); // Parse the JSON string into an object
+    //         const token = user.token; // Extract the token from the user object
+    
+    //         if (!token) {
+    //             console.error('No token found');
+    //             return;
+    //         }
+    
+    //         // Make the DELETE request with the Authorization header
+    //         const response = await axios.delete(
+    //             `https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`,
+    //             {
+    //                 headers: {
+    //                     Authorization: `Bearer ${token}`
+    //                 }
+    //             }
+    //         );
+    
+    //         if (response.status === 200) {
+    //             const updatedComments = comments.filter(comment => comment._id !== commentId);
+    //             setComments(updatedComments);
+    //             console.log('Comment deleted successfully.');
+    //         } else {
+    //             console.error('Failed to delete comment:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error deleting comment:', error);
+    //     }
+    // };
     
     
 
