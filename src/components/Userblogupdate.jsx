@@ -44,9 +44,32 @@ function Userblogupdate() {
                 console.error('Blog details are not available.');
                 return;
             }
-
-            const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
-
+    
+            // Retrieve user object from localStorage
+            const userString = localStorage.getItem('user');
+            if (!userString) {
+                console.error('No user information found in localStorage');
+                return;
+            }
+    
+            const user = JSON.parse(userString); // Parse the JSON string into an object
+            const token = user.token; // Extract the token from the user object
+    
+            if (!token) {
+                console.error('No token found');
+                return;
+            }
+    
+            // Make the DELETE request with the Authorization header
+            const response = await axios.delete(
+                `https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+    
             if (response.status === 200) {
                 const updatedComments = comments.filter(comment => comment._id !== commentId);
                 setComments(updatedComments);
@@ -58,6 +81,8 @@ function Userblogupdate() {
             console.error('Error deleting comment:', error);
         }
     };
+    
+    
 
     const handleDeleteBlog = async () => {
         try {
