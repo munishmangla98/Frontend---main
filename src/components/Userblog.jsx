@@ -19,8 +19,6 @@ function Userblog({ item }) {
                     <p>{item.date}</p>
                     <div className="card-actions justify-between">
                  
-
-
               
                        
                     </div>
