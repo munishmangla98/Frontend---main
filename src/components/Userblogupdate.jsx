@@ -52,7 +52,7 @@ function Userblogupdate() {
     }
     const handleDeleteComment = async (commentId) => {
         try {
-            await axios.delete(`https://mernbackend-main.onrender.com/api/blogs/${id}/comments/${commentId}`);
+            await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
             const updatedComments = comments.filter(comment => comment._id !== commentId);
             setComments(updatedComments);
         } catch (error) {
