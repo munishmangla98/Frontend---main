@@ -45,7 +45,7 @@ function Userblogupdate() {
                 return;
             }
 
-            const response = await axios.delete(`http://localhost:5000/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
+            const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
 
             if (response.status === 200) {
                 const updatedComments = comments.filter(comment => comment._id !== commentId);
@@ -58,9 +58,10 @@ function Userblogupdate() {
             console.error('Error deleting comment:', error);
         }
     };
+
     const handleDeleteBlog = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+            await axios.delete(`https://mernbackend-main.onrender.com/api/blogs/${id}`);
             // Redirect to a different route after successful deletion
             history.push('/blogs'); // Example redirect to a blogs page
             toast.success("Blog Deleted in Successfully");
