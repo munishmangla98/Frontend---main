@@ -11,14 +11,14 @@ import toast from "react-hot-toast";
 function Userblogupdate() {
     const { id } = useParams();
     const [blog, setBlog] = useState();
-    const [comments, setComments] = useState([]);
+    // const [comments, setComments] = useState([]);
 
     useEffect(() => {
         const fetchBlog = async () => {
             try {
                 const res = await axios.get(`https://mernbackend-main.onrender.com/api/blogs/${id}`);
                 setBlog(res.data);
-                setComments(res.data.comments);
+                // setComments(res.data.comments);
             } catch (error) {
                 console.error('Error fetching blog:', error);
             }
@@ -50,26 +50,26 @@ function Userblogupdate() {
     // } else {
     //     console.error('User data not found in local storage.');
     // }
-    const handleDeleteComment = async (commentId) => {
-        try {
-            if (!blog) {
-                console.error('Blog details are not available.');
-                return;
-            }
+    // const handleDeleteComment = async (commentId) => {
+    //     try {
+    //         if (!blog) {
+    //             console.error('Blog details are not available.');
+    //             return;
+    //         }
 
-            const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
+    //         const response = await axios.delete(`https://mernbackend-main.onrender.com/api/blogcomment/blogs/${blog._id}/comments/${commentId}`);
 
-            if (response.status === 200) {
-                const updatedComments = comments.filter(comment => comment._id !== commentId);
-                setComments(updatedComments);
-                console.log('Comment deleted successfully.');
-            } else {
-                console.error('Failed to delete comment:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error deleting comment:', error);
-        }
-    };
+    //         if (response.status === 200) {
+    //             const updatedComments = comments.filter(comment => comment._id !== commentId);
+    //             setComments(updatedComments);
+    //             console.log('Comment deleted successfully.');
+    //         } else {
+    //             console.error('Failed to delete comment:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error deleting comment:', error);
+    //     }
+    // };
 
     // const handleDeleteComment = async (commentId) => {
     //     try {
@@ -154,7 +154,7 @@ function Userblogupdate() {
                             >Delete Blog</a>
                         </div>
                         <hr />
-                        <div className="overflow-x-auto">
+                        {/* <div className="overflow-x-auto">
                             <table className="table table-xs table-pin-rows table-pin-cols">
 
                                 <thead>
@@ -183,7 +183,7 @@ function Userblogupdate() {
                                 </tbody>
                                 <hr />
                             </table>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
