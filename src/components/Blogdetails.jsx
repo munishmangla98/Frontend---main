@@ -51,8 +51,10 @@ function Blogdetails() {
     const userId = localStorage.getItem('user');
     const userObject = JSON.parse(userId); // Parse the JSON string into an object
     const userIdValue = userObject.user_id;
+    const usernameValue = userObject.username;
 
     console.log(userIdValue); // This will output: "6664327128120e79d1321b17"
+    console.log(usernameValue); // This will output the username
 
 
     if (!blog) return <div>Loading...</div>;
@@ -68,10 +70,14 @@ function Blogdetails() {
                         <p>Autor : {blog.author.name}</p>
                         <p>Date: {new Date(blog.date).toLocaleString()}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-blue-500 text-white" onClick={() => document.getElementById("my_modal_34").showModal()}>
-                                Add Comment
-                            </button>
-                            <Addcomment />
+                        {blog.author.name !== usernameValue && (
+                                <>
+                                    <button className="btn bg-blue-500 text-white" onClick={() => document.getElementById("my_modal_34").showModal()}>
+                                        Add Comment
+                                    </button>
+                                    <Addcomment />
+                                </>
+                            )}
                         </div>
                         <hr />
                         <div className="overflow-x-auto">
