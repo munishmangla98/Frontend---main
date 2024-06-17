@@ -18,7 +18,7 @@ function Cards({ item }) {
                     <p>Author: {item.author.name}</p>
                     <p>{item.content}</p>
                     <div className="card-actions justify-between">
-                        <div className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-blue-500 hover:text-white duration-200">{item.date}</div>
+                        <div className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-blue-500 hover:text-white duration-200">{new Date(item.date).toLocaleString()}</div>
                    
                         <Link
                             to={`/Blogdetails/${item._id}`}
