@@ -65,7 +65,7 @@ function Blogdetails() {
                     <div className="card-body flex flex-col items-center">
                         <h2 className="card-title">Title: {blog.title}</h2>
                         <p>Content: {blog.content}</p>
-                        <p>Autor : {blog.user.name}</p>
+                        <p>Autor : {blog.author.name}</p>
                         <p>Date: {new Date(blog.date).toLocaleString()}</p>
                         <div className="card-actions justify-end">
                             <button className="btn bg-blue-500 text-white" onClick={() => document.getElementById("my_modal_34").showModal()}>
