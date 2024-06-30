@@ -17,7 +17,7 @@ function Footer() {
           </nav>
           <nav>
             <div className="grid grid-flow-col gap-4">
-              <a>
+              <a href="https://www.linkedin.com/in/munish-mangla">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
