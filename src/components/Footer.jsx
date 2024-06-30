@@ -58,7 +58,7 @@ function Footer() {
           </nav>
           <aside>
             {/* <p>Copyright © 2024 - All right reserved by Munish Mangla</p> */}
-            <p>Copyright © 2024 - All right reserved by Lucid Growth</p>
+            <p>Copyright © 2024 - All right reserved by Munish Mangla</p>
 
           </aside>
         </footer>
