@@ -18,7 +18,7 @@ function About() {
       <div>
         <h1 className="text-5xl font-extrabold text-blue-950 mb-10 flex items-center gap-3">
           <FaBolt className="text-yellow-400 text-4xl" />
-          <span>What Is Mnag Tech Talk?</span>
+          <span>What Is Mang Tech Talk?</span>
         </h1>
 
         <p className="text-lg text-gray-700 mb-12 leading-8">
