@@ -3,11 +3,13 @@ import Banner from "../components/Banner"
 import Bolgs from "../components/Bolgs"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
+import About from "../components/about"
 function Home() {
   return (
     <>
     <Navbar/>
     <Banner/>
+    <About/>
     <Bolgs/>
     <Footer/>
     </>

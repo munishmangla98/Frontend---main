@@ -1,5 +1,5 @@
 // import React from 'react'
-import logo from "../../public/logo.png";
+import logo from "../../public/MTT.png";
 
 function Banner() {
     return (
@@ -8,7 +8,7 @@ function Banner() {
                 <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-36">
                     <div className="space-y-8">
                         <h1 className="text-2xl md:text-4xl font-bold">
-                            Hello, welcomes here to learn something{" "}
+                            Welcomes here to learn something{" "}
                             <span className="text-pink-500">new everyday!!!</span>
                         </h1>
                         <p className="text-sm md:text-xl">
@@ -23,7 +23,7 @@ function Banner() {
                 <div className="order-1 w-full mt-20 md:w-1/2">
                     <img
                         src={logo}
-                        className="md:w-[550px] md:h-[460px] md:ml-12"
+                        className="rounded-full md:w-[440px] md:h-[430px] md:ml-12"
                         alt=""
                     />
                 </div>
