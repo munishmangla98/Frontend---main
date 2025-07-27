@@ -49,7 +49,7 @@ function Navbar() {
                                 {navitem}
                             </ul>
                         </div>
-                        <a href="/" className="text-2xl font-bold cursor-pointer">Blog App</a>
+                        <a href="/" className="text-2xl font-bold cursor-pointer">Tech Talk</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
