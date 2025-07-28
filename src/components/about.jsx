@@ -22,7 +22,7 @@ function About() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-12 leading-8">
-          <strong className="text-blue-900">Mnag Tech Talk</strong> is not just a tech blog—it's a future-facing space
+          <strong className="text-blue-900">Mang Tech Talk</strong> is not just a tech blog—it's a future-facing space
           where ideas, code, and creators collide. We talk systems, scale, strategy—and everything in between. Whether you’re
           a dev, designer, PM, AI researcher, or just curious about what's next, this is your playground for sharp insights,
           deep tech, and smart execution.
@@ -49,7 +49,7 @@ function About() {
                 Ideas That Ship
               </h2>
               <p className="leading-relaxed">
-                We don't just think—we build. Mnag Tech Talk is about ideas that translate into impact. Product innovation,
+                We don't just think—we build. Mang Tech Talk is about ideas that translate into impact. Product innovation,
                 feature design, and shipping fast (without breaking everything).
               </p>
             </div>
@@ -88,7 +88,7 @@ function About() {
                 Built for Builders
               </h2>
               <p className="leading-relaxed">
-                Mnag Tech Talk is a space for the makers, the tinkerers, the leaders, and the curious minds who want more than
+                Mang Tech Talk is a space for the makers, the tinkerers, the leaders, and the curious minds who want more than
                 surface-level content. We celebrate bold thinking and smarter execution.
               </p>
             </div>
@@ -104,7 +104,7 @@ function About() {
                 🤖 Future-Proof Thinking
               </h2>
               <p className="text-gray-700 leading-relaxed text-lg">
-                We embrace AI, automation, and emerging tech—not as hype, but as tools that unlock velocity. Mnag Tech Talk
+                We embrace AI, automation, and emerging tech—not as hype, but as tools that unlock velocity. Mang Tech Talk
                 explores how to leverage AI for ideation, engineering, productivity, and creative workflows—while keeping
                 the human in the loop.
               </p>
